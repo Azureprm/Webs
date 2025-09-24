@@ -1,7 +1,7 @@
 import { SKILLS, PROJECTS } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname.split("/").pop();
+    const path = window.location.pathname;
     
     // Set current year in both desktop and mobile footers
     const yearSpanDesktop = document.getElementById('current-year-desktop');
@@ -14,10 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Render content based on page
-    if (path.includes('skills.html') || path === 'skills' || path === '') {
+    if (path.includes('skills.html')) {
         renderSkills();
-    }
-    if (path.includes('projects.html') || path === 'projects' || path === '') {
+    } else if (path.includes('projects.html')) {
         renderProjects();
     }
 });
